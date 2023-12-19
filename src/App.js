@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import SignUpForm from "./components/Auth/SignUpForm";
+import { Route, Routes } from "react-router-dom";
+import LoginForm from "./components/Auth/LoginForm";
+import { Toaster } from "react-hot-toast";
+import MainPage from "./components/employee/MainPage";
+import AddEmployee from "./components/employee/AddEmployee";
+import ViewEmployee from "./components/employee/ViewEmployee";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Routes>
+        <Route path="/" element={<SignUpForm />}></Route>
+        <Route path="/login" element={<LoginForm />}></Route>
+        <Route path="/MainPage" element={<MainPage />}></Route>
+      </Routes>
+      <Toaster />
     </div>
   );
 }
